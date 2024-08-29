@@ -1,0 +1,143 @@
+@import url('https://fonts.googleapis.com/css2?family=Matemasie&family=Montserrat:ital,wght@0,100..900;1,100..900&family=Oswald:wght@200..700&family=Playfair+Display:ital,wght@0,400..900;1,400..900&family=Roboto+Slab:wght@100..900&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&family=Ubuntu:ital,wght@0,300;0,400;0,500;0,700;1,300;1,400;1,500;1,700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Oleo+Script:wght@400;700&display=swap');
+
+*{
+    padding: 0;
+    margin: 0;
+}
+
+body{
+    font-family: "Roboto", sans-serif;
+    background: linear-gradient(to right, #cb60b3 0%,#a80077 0%,#c146a1 50%,#c146a1 50%,#5864b7 99%,#db36a4 100%);
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;   
+}
+
+.game{
+    display: flex;
+    flex-direction: row;
+    width: 276px;
+    flex-wrap: wrap;
+}
+
+.name{
+    font-family: "Oleo Script", system-ui;
+    color: white;
+    margin-bottom: 70px;
+    margin-top: 100px;
+    font-size: 60px;
+    position: relative;
+    left: 10px;
+}
+
+.square{
+    background-color: white;
+    width: 60px;
+    height: 60px;
+    border-radius: 10px;
+    padding: 10px;
+    margin: 6px;
+    cursor: pointer;
+    color: #a80077;
+    font-weight: bold;
+    font-size: 50px;
+    display: flex; 
+    justify-content: center;
+}
+
+.win{
+    color: green;
+    animation-name: animation-cell;
+    animation-duration: 2s;
+    animation-iteration-count: 1;
+    animation-direction: alternate;
+}
+
+.draft{
+    color: red;
+    animation-name: animation-cell;
+    animation-duration: 2s;
+    animation-iteration-count: 1;
+    animation-direction: alternate;
+}
+
+@keyframes animation-cell{
+    0%{
+        transform: scale(1);
+    }
+    50%{
+        transform: scale(1.5);
+    }
+    100%{
+        transform: scale(1);
+    }
+}
+
+.game-end{ pointer-events: none }
+
+.inscription{
+    color: white;
+    font-size: 45px;
+    margin-top: 105px;
+}
+
+.history-box{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.arrow{
+    height: 60px;
+    width: 60px;
+    margin-top: 20px;
+    border-radius: 50%;
+    font-size: 30px;
+    border: none;
+    color: #a80077;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.arrow:hover{ font-size: 40px }
+
+.histiry-res{
+    opacity: 0;
+    margin-top: 35px;
+    padding: 10px;
+    height: 200px;
+    width: 260px;
+    background-color: white;
+    border-radius: 15px;
+    transition: all .6s ease;
+}
+
+.histiry-res p{
+    text-align: center;
+    margin-top: 20px;
+    font-weight: bold;
+    font-size: 20px;
+}
+
+.reset{
+    margin-top: 20px;
+    padding: 10px 20px;
+    border-radius: 10px;
+    cursor: pointer;
+    border: none;
+    background-color: #a80077;
+    color: white;
+    transition: background-color .4s ease;
+}
+
+.reset:hover{
+    background-color: #cb60b3;
+}
+
+@media(max-width: 700px){
+    body{
+        flex-direction: column;
+        align-items: center;
+    }
+}
